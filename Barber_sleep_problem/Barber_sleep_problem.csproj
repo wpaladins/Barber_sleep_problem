@@ -94,19 +94,16 @@
     <None Include="Resources\hair_cut.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sleep.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\wait.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\chair.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\question.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="head.ico" />
+    <None Include="Resources\chair.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\sleep.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

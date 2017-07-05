@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barber_sleep_problem));
             this.waithome = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.warning = new System.Windows.Forms.PictureBox();
+            this.chair_haircut = new System.Windows.Forms.PictureBox();
             this.chair2 = new System.Windows.Forms.PictureBox();
             this.chair3 = new System.Windows.Forms.PictureBox();
             this.chair1 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chair_haircut = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.waithome.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.warning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chair_haircut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chair2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chair3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chair1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chair_haircut)).BeginInit();
             this.SuspendLayout();
             // 
             // waithome
@@ -56,6 +58,45 @@
             this.waithome.TabIndex = 0;
             this.waithome.TabStop = false;
             this.waithome.Text = "WaitingRoom";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chair_haircut);
+            this.groupBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox2.Location = new System.Drawing.Point(31, 29);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(201, 411);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "HairCutRoom";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(313, 462);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(206, 38);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add a customer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // warning
+            // 
+            this.warning.BackColor = System.Drawing.Color.Transparent;
+            this.warning.Location = new System.Drawing.Point(271, 442);
+            this.warning.Name = "warning";
+            this.warning.Size = new System.Drawing.Size(290, 20);
+            this.warning.TabIndex = 4;
+            this.warning.TabStop = false;
+            // 
+            // chair_haircut
+            // 
+            this.chair_haircut.Location = new System.Drawing.Point(20, 50);
+            this.chair_haircut.Name = "chair_haircut";
+            this.chair_haircut.Size = new System.Drawing.Size(160, 320);
+            this.chair_haircut.TabIndex = 0;
+            this.chair_haircut.TabStop = false;
             // 
             // chair2
             // 
@@ -84,41 +125,13 @@
             this.chair1.TabIndex = 0;
             this.chair1.TabStop = false;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.chair_haircut);
-            this.groupBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(31, 29);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(201, 411);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "HairCutRoom";
-            // 
-            // chair_haircut
-            // 
-            this.chair_haircut.Location = new System.Drawing.Point(20, 50);
-            this.chair_haircut.Name = "chair_haircut";
-            this.chair_haircut.Size = new System.Drawing.Size(160, 320);
-            this.chair_haircut.TabIndex = 0;
-            this.chair_haircut.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(313, 462);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add a customer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Barber_sleep_problem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(832, 524);
+            this.Controls.Add(this.warning);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.waithome);
@@ -128,11 +141,12 @@
             this.Text = "Barber sleep problem by CS1504 WangXuSheng";
             this.Load += new System.EventHandler(this.Barber_sleep_problem_Load);
             this.waithome.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.warning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chair_haircut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chair2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chair3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chair1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chair_haircut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,6 +160,7 @@
         private System.Windows.Forms.PictureBox chair1;
         private System.Windows.Forms.PictureBox chair_haircut;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox warning;
     }
 }
 

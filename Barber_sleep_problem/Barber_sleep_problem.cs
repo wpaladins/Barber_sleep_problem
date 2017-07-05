@@ -13,7 +13,7 @@ namespace Barber_sleep_problem
 {
     public partial class Barber_sleep_problem : Form
     {
-        Semaphore sema_sleep = new Semaphore(1, 1);
+        Semaphore sema_sleep = new Semaphore(0, 1);
         Semaphore sema_chairs = new Semaphore(3, 3);
         Semaphore sema_barber = new Semaphore(1, 1);
 
@@ -30,6 +30,7 @@ namespace Barber_sleep_problem
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             chair_haircut.Image = Resource1.sleep;
+            warning.Image = null;
         }
 
         private delegate void dele_customer();//delegate方法；
@@ -53,6 +54,9 @@ namespace Barber_sleep_problem
             }
             else if (chairs == 0)
             {
+                warning.Image = Resource1.warning;
+                Thread.Sleep(500);
+                warning.Image = null;
                 return;
             }
             else
@@ -82,9 +86,10 @@ namespace Barber_sleep_problem
                     sema_barber.Release();
                 }
                 haircut();
-                Thread.Sleep(4000);
+                adjust();
+                Thread.Sleep(5000);
                 chair_haircut.Image = Resource1.question;
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
             }
 
         }//barber线程的回调函数；
@@ -125,6 +130,21 @@ namespace Barber_sleep_problem
                 chair2.Image = null;
             else
                 chair3.Image = null;
+        }
+        private void adjust()
+        {
+            if ((chair1.Image == null && chair2.Image != null && chair3.Image == null) || (chair1.Image == null && chair2.Image == null && chair3.Image != null))
+            {
+                chair1.Image = Resource1.wait;
+                chair2.Image = null;
+                chair3.Image = null;
+            }
+            else if (chair1.Image == null && chair2.Image != null && chair3.Image != null)
+            {
+                chair1.Image = Resource1.wait;
+                chair2.Image = Resource1.wait;
+                chair3.Image = null;
+            }
         }
     }
 }
